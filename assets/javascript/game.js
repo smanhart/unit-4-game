@@ -32,14 +32,13 @@ function getCrytalNum(min, max) {
 getCrytalNum(1,12);
 console.log(crystalNum);
 
-
+function generateCrystals() {
 //generate random crystal pic
 //for loop to make a crystal for each number in array
 for (var i = 0; i < crystalNum.length; i++) {
     
         var randomCrystal = (Math.floor(Math.random()*crystalPics.length)+1);
         // $("#crystals").html("<img src='assets/images/Crys_" + randomCrystal + ".jpg'")
-        console.log(randomCrystal);
         var imageCrystal = $("<img>");
         //assign class
         imageCrystal.addClass("crystal-image");
@@ -51,24 +50,58 @@ for (var i = 0; i < crystalNum.length; i++) {
         $("#crystals").append(imageCrystal);
         
 }
+}
+generateCrystals();
 
+function reset() {
+    userTotal = 0;
+    getRandomNum(19,120);
+    $("#numToGuess").text(targetNum);
+    getCrytalNum(1,12);
+    $("#crysTotal").empty();
+    $("#crystals").empty();
+    $("#crystals").empty();
+    generateCrystals();
+
+}
 
 //Process
 
-//create onclick event for crystals
+//create onclick event for crystals ASK FOR CLARIFICATION ABOUT THIS NESTED IN AN EVENT RATHER THAN OBJECT
 $(".crystal-image").on("click", function() {
-    var crystalValue = ($(this).attr("data-crystavalue"))
-    console.log(this);
+    //pull assigned number data
+    var crystalValue = ($(this).attr("data-crystalvalue"));
+    //turn string data into an integer
+    crystalValue = parseInt(crystalValue);
+    //add crystal value to user total
+    userTotal += crystalValue;
+    $("#crysTotal").text(userTotal);
+    console.log(userTotal);
+
+    //check user total to target num
+    if(userTotal === targetNum) {
+        winCounter++
+        $("#wins").text(winCounter);
+        reset();
+    } 
+    else if(userTotal > targetNum) {
+        lossCounter++
+        $("#losses").text(lossCounter);
+        reset();
+    }
+    //if equal, you win
+        //reset game
+    //if over, you lose
+        //reset game
+
+
+
+
 });
 
 
 
 
-//pull assigned number data
-//turn string data into an integer
-//add crystal value to user total
-//check user total to target num
-    //if equal, you win
-        //reset game
-    //if over, you lose
-        //reset game
+
+
+
