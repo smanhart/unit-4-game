@@ -11,6 +11,18 @@ var crystalPics = ["Crys_1.jpg", "Crys_2.jpg", "Crys_3.jpg", "Crys_4.jpg"]
 
 //Functions
 
+function reset() {
+    userTotal = 0;
+    getRandomNum(19,120);
+    $("#numToGuess").text(targetNum);
+    crystalNum = [];
+    getCrytalNum(1,12);
+    $("#crysTotal").empty();
+    $("#crystals").empty();
+    generateCrystals();
+
+}
+
 //generate random target number
 function getRandomNum(min, max) {
     targetNum = Math.floor(Math.random() * (max - min)) + min;
@@ -53,22 +65,12 @@ for (var i = 0; i < crystalNum.length; i++) {
 }
 generateCrystals();
 
-function reset() {
-    userTotal = 0;
-    getRandomNum(19,120);
-    $("#numToGuess").text(targetNum);
-    getCrytalNum(1,12);
-    $("#crysTotal").empty();
-    $("#crystals").empty();
-    $("#crystals").empty();
-    generateCrystals();
 
-}
 
 //Process
 
 //create onclick event for crystals ASK FOR CLARIFICATION ABOUT THIS NESTED IN AN EVENT RATHER THAN OBJECT
-$(".crystal-image").on("click", function() {
+$("#crystals").on("click", ".crystal-image", function() {
     //pull assigned number data
     var crystalValue = ($(this).attr("data-crystalvalue"));
     //turn string data into an integer
