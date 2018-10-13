@@ -3,6 +3,7 @@
     <head>
         <title>Crystal Collecter Game</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Mystery+Quest|Raleway" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/style.css"/>
     </head>
     <body>
@@ -17,11 +18,13 @@
             <div class="row">
                 <div class="card">
                     <div class="card-body">
-                        <p>You will be given a ramdom number at the start of the game. </p>
-                        <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
-                        <p>You win the game by matching your total score to the random number, you lose the game if your total goes above the random number.</p>
-                        <p>The value of each crystal is hidden from you until it is clicked.</p>
-                        <p>Each time the game starts, the value of each crystal changes.</p>
+                        <ul>
+                            <li>You will be given a ramdom number at the start of the game. </li>
+                            <li>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</li>
+                            <li>You win the game by matching your total score to the random number, you lose the game if your total goes above the random number.</li>
+                            <li>The value of each crystal is hidden from you until it is clicked.</li>
+                            <li>Each time the game starts, the value of each crystal changes.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -35,6 +38,12 @@
 
                 <div class="card">
                     <div class="card-body">
+                        Your total score is: <span id="crysTotal">0</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
                       <p>Wins: <span id="wins"></span></p>
                       <p>Losses: <span id="losses"></span></p>
                     </div>
@@ -45,13 +54,9 @@
                 <div id="crystals"></div>
             </div>
 
-            <div class="row">
-                <div class="card">
-                    <div class="card-body">
-                      Your total score is: <span id="crysTotal">0</span>
-                    </div>
-                </div>
-            </div>
+            <!-- <div class="row">
+                
+            </div> -->
 
         </div>    
 

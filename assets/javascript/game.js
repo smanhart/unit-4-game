@@ -4,7 +4,7 @@ var crystalNum = [];
 var winCounter = 0;
 var lossCounter = 0;
 var userTotal = 0;
-var crystalPics = ["Crys_1.jpg", "Crys_2.jpg", "Crys_3.jpg", "Crys_4.jpg"]
+var crystalPics = ["Crys_1.jpg", "Crys_2.jpg", "Crys_3.jpg", "Crys_4.jpg", "Crys_5.jpg", "Crys_6.jpg", "Crys_7.jpg", "Crys_8.jpg" ]
 
 
 
@@ -84,11 +84,13 @@ $("#crystals").on("click", ".crystal-image", function() {
     if(userTotal === targetNum) {
         winCounter++
         $("#wins").text(winCounter);
+        alert("You've won!")
         reset();
     } 
     else if(userTotal > targetNum) {
         lossCounter++
         $("#losses").text(lossCounter);
+        alert("What a shame, you've lost.")
         reset();
     }
     //if equal, you win
