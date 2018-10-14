@@ -16,7 +16,7 @@
 
         <div class="container">
             <div class="row">
-                <div class="card">
+                <div class="col card">
                     <div class="card-body">
                         <ul>
                             <li>You will be given a ramdom number at the start of the game. </li>
@@ -29,35 +29,32 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div class="card">
+        
+            <div class="row justify-content-md-center">
+                <div class="col-md-3 card">
                     <div class="card-body">
                         Your target number is: <span id="numToGuess"></span>
                     </div>
                   </div>
 
-                <div class="card">
+                <div class="col-md-3 card">
                     <div class="card-body">
                         Your total score is: <span id="crysTotal">0</span>
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="col-md-3 card">
                     <div class="card-body">
                       <p>Wins: <span id="wins"></span></p>
                       <p>Losses: <span id="losses"></span></p>
                     </div>
                 </div>
             </div>
+        
 
             <div class="row">
-                <div id="crystals"></div>
+                <div class="col" id="crystals" style="margin-left: 117px"></div>
             </div>
-
-            <!-- <div class="row">
-                
-            </div> -->
-
         </div>    
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

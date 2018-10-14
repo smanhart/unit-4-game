@@ -1,6 +1,13 @@
 .crystal-image {
     width: 200px;
     height: 200px;
+    margin: 10px;
+
+}
+
+.crystal-image.col {
+    background: red;
+    margin: 0 110px;
 }
 
 .jumbotron {
@@ -23,5 +30,10 @@ h1 {
 body {
     background-color: #527c70;
     font-family: 'Raleway', sans-serif;
+}
+
+.card-body {
+    border: 3px double #0E1C30;
+    margin: 10px 0;
 }
  
